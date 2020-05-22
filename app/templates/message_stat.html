@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-6 mt-5">
+            <ul class="list-group">
+                <h2>Message {{ message.id }} statistics:</h2>
+                <li class="list-group-item ">Title: {{ message.title }}</li>
+                <li class="list-group-item ">Body: {{ message.body }}</li>
+                <li class="list-group-item ">Date puplished: {{ message.date }}</li>
+                <li class="list-group-item ">Tags: {{ message.tags.count }}</li>
+                <li class="list-group-item ">Comments: {{ message.comments.count }}</li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

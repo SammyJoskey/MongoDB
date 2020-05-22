@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-6 mt-5">
+            <ul class="list-group">
+                {% for message in message_list %}
+                <h2>Message {{ message.id }}</h2>
+                    <li class="list-group-item">Title: {{ message.title }}</li>
+                    <li class="list-group-item">Body: {{ message.body }}</li>
+                    <li class="list-group-item">Date published: {{ message.date }}</li>
+                    <li class="list-group-item list-group-item-action list-group-item-dark">Tags:</li>
+                    <ul class="list-group"></ul>
+                    {% for tag in message.tags.all %}
+                        <li class="list-group-item" style="margin-left: 80px;">{{ tag.title }}</li>
+                    {% endfor %}
+                    </ul>
+                    <li class="list-group-item list-group-item-action list-group-item-dark">Comments:</li>
+                    <ul class="list-group"></ul>
+                    {% for comment in message.comments.all %}
+                        <li class="list-group-item" style="margin-left: 80px;">{{ comment.title }}</li>
+                        <li class="list-group-item" style="margin-left: 80px;">{{ comment.date_add }}</li>
+                    {% endfor %}
+                    </ul>
+                    <br>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -3,10 +3,11 @@
 * Clone the repo
 * from the repo dir:
 1. Запустить контейнер mongo:
-* docker run --name mongo-instance --rm -d -p "27017:27017" mongo:4.2.3
+* docker run --name mongo --rm -d -p "27017:27017" mongo:4.2.3
 2. Запустить контейнер redis:
-* docker run --name redis-instance --rm -d -p 6379:6379 redis:5.0.7 redis-server --appendonly yes
+* docker run --name redis --rm -d -p 6379:6379 redis:5.0.7 
 3. Запустить приложение на Django:
+* python manage.py migrate
 * python manage.py runserver 
 
 # NB! Pymongo==3.7.2
